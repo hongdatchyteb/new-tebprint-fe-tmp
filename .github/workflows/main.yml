@@ -39,7 +39,7 @@ jobs:
         with:
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          cloudflare-project-name: test
+          cloudflare-project-name: new-tebprint-fe-tmp
           directory: apps/home/dist-prod  # Đảm bảo thư mục dist là nơi chứa các file sau khi build (có thể thay đổi tùy theo dự án)
           github-token:  ${{ secrets.GITHUB_TOKEN }}
           github-environment: ${{ (github.ref == 'refs/heads/master' && 'production')}}
