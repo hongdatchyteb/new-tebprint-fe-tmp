@@ -67,6 +67,15 @@ export default defineConfig({
         '@ui': `${path.resolve('../../packages/ui')}`,
       },
     },
+    server: {
+      proxy: {
+        '/api': {
+          target: 'http://194.233.94.109:3007',
+          changeOrigin: true,
+          secure: false, // Không kiểm tra HTTPS
+        },
+      },
+    },
   },
   // experimental: {
   //   optimizeHoistedScript: true,
