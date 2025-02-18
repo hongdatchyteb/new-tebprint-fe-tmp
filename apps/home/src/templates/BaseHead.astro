@@ -32,7 +32,7 @@ const productResponse = await productService.getProducts();
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content={AppConfig.author} />
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- {IS_VIEW_TRANSITIONS_ENABLED && <ViewTransitions />} -->
