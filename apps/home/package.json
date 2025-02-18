@@ -75,7 +75,7 @@
     "@types/file-saver": "^2.0.6",
     "@types/react-beautiful-dnd": "^13.1.7",
     "@webtoon/psd": "^0.4.0",
-    "astro": "^4.0.3",
+    "astro": "^5.3.0",
     "astro-robots-txt": "^1.0.0",
     "axios": "^1.6.2",
     "class-variance-authority": "^0.7.0",

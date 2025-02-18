@@ -16,6 +16,11 @@ const IS_DEV = process.env.ENV !== 'production';
 const PORT = Number(process.env.PORT) || 4321;
 const HOST = process.env.HOST || false;
 
+console.log('Environment Variables:', process.env);
+console.log('IS_DEV:', IS_DEV);
+console.log('PORT:', PORT);
+console.log('HOST:', HOST);
+
 // https://astro.build/config
 export default defineConfig({
   // base: '.', // Set a path prefix.
@@ -34,7 +39,7 @@ export default defineConfig({
       theme: 'monokai',
     },
   },
-  assets: true,
+  // assets: true,
   viewTransitions: true,
   integrations: [
     react(),
@@ -44,12 +49,12 @@ export default defineConfig({
     ...(process.env.PREFETCH ? [prefetch()] : []),
   ],
   output: 'server',
-  adapter: cloudflare(),
-  // adapter: process.env.VERCEL
-  //   ? vercel()
-  //   : node({
-  //       mode: 'standalone',
-  //     }),
+  // assets: false,
+  // image: { service: passthroughImageService() },
+  adapter: cloudflare({
+    mode: 'directory', // or 'advanced' depending on your needs
+    imageService: 'cloudflare'
+  }),
   build: {
     assets: '_acustom',
   },
@@ -63,7 +68,7 @@ export default defineConfig({
       },
     },
   },
-  experimental: {
-    optimizeHoistedScript: true,
-  },
+  // experimental: {
+  //   optimizeHoistedScript: true,
+  // },
 });

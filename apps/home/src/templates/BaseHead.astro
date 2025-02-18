@@ -1,7 +1,7 @@
 ---
 import 'ui/css/globals.css';
 
-import ViewTransitions from 'astro/components/ViewTransitions.astro';
+// import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import type { BaseProps } from 'shared';
 import { Wrapper } from 'ui';
 
@@ -9,7 +9,7 @@ import { Header } from '@/layouts';
 import { productService } from '@/services';
 import { AppConfig } from '@/utils';
 
-const IS_VIEW_TRANSITIONS_ENABLED = import.meta.env.PUBLIC_VIEW_TRANSITIONS_ENABLED;
+// const IS_VIEW_TRANSITIONS_ENABLED = import.meta.env.PUBLIC_VIEW_TRANSITIONS_ENABLED;
 
 // let ViewTransitions = null;
 
@@ -35,7 +35,7 @@ const productResponse = await productService.getProducts();
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    {IS_VIEW_TRANSITIONS_ENABLED && <ViewTransitions />}
+    <!-- {IS_VIEW_TRANSITIONS_ENABLED && <ViewTransitions />} -->
   </head>
   <body class="overflow-y-hidden">
     <Wrapper>
