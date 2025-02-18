@@ -8,6 +8,7 @@ import node from '@astrojs/node';
 import dotenv from 'dotenv';
 import prefetch from '@astrojs/prefetch';
 import path from 'path';
+import cloudflare from '@astrojs/cloudflare';
 
 dotenv.config();
 
@@ -43,11 +44,12 @@ export default defineConfig({
     ...(process.env.PREFETCH ? [prefetch()] : []),
   ],
   output: 'server',
-  adapter: process.env.VERCEL
-    ? vercel()
-    : node({
-        mode: 'standalone',
-      }),
+  adapter: cloudflare(),
+  // adapter: process.env.VERCEL
+  //   ? vercel()
+  //   : node({
+  //       mode: 'standalone',
+  //     }),
   build: {
     assets: '_acustom',
   },
